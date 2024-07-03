@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  db_dw:
+    container_name: postgres_dw
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: dw_root
+      POSTGRES_PASSWORD: dw_root
+      POSTGRES_DB: marirhs_dw
+    ports:
+      - "5002:5432"
+  db_app:
+    container_name: postgres_app
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: app_root
+      POSTGRES_PASSWORD: app_root
+      POSTGRES_DB: marirhs_app
+    ports:
+      - "5001:5432"    
+  # pgadmin:
+  #   container_name: pgadmin4_container
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: root
+  #   ports:
+  #     - "5050:80"
