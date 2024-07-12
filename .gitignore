@@ -1,1 +1,4 @@
 .DS_Store
+sql/id_cache.db-wal
+sql/id_cache.db-shm
+sql/id_cache.db

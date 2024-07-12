@@ -124,7 +124,7 @@ SET search_path = production;
 		a.pizza_id
 		,a.pizza_name
 		,b.toppings
-		,now() as dw_date_created
+		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
 		pizza_runner.pizza_names a
 		left join pizza_runner.pizza_recipes b on b.pizza_id=a.pizza_id
@@ -144,7 +144,7 @@ SET search_path = production;
 			,b.distance
 			,b.duration 
 			,b.cancellation
-			,now() as dw_date_created
+			,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 		from 
 		pizza_runner.customer_orders a
 		left join pizza_runner.runner_orders b on b.order_id=a.order_id
@@ -155,6 +155,7 @@ SET search_path = production;
 	select 
 		a.runner_id
 		,a.registration_date
+		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
 	pizza_runner.runners a
 	;
@@ -164,6 +165,7 @@ SET search_path = production;
 	select 
 		a.topping_id
 		,a.topping_name
+		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
 	pizza_runner.pizza_toppings a
 	;
