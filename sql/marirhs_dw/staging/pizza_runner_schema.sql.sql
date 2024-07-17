@@ -126,8 +126,8 @@ SET search_path = production;
 		,b.toppings
 		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
-		pizza_runner.pizza_names a
-		left join pizza_runner.pizza_recipes b on b.pizza_id=a.pizza_id
+		staging.pizza_names a
+		left join staging.pizza_recipes b on b.pizza_id=a.pizza_id
 	;	
 	
 	drop table if exists production.fact_customer_orders;
@@ -146,8 +146,8 @@ SET search_path = production;
 			,b.cancellation
 			,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 		from 
-		pizza_runner.customer_orders a
-		left join pizza_runner.runner_orders b on b.order_id=a.order_id
+		staging.customer_orders a
+		left join staging.runner_orders b on b.order_id=a.order_id
 		;
 		
 	drop table if exists production.dim_runners;
@@ -157,7 +157,7 @@ SET search_path = production;
 		,a.registration_date
 		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
-	pizza_runner.runners a
+	staging.runners a
 	;
 
 	drop table if exists production.dim_pizza_toppings;
@@ -167,5 +167,5 @@ SET search_path = production;
 		,a.topping_name
 		,timezone('EST', now())::TIMESTAMP(0) as dw_date_created
 	from 
-	pizza_runner.pizza_toppings a
+	staging.pizza_toppings a
 	;
