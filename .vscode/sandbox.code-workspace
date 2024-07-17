@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "/Users/shri/Documents/git_hub/sandbox"
+		},
+		{
+			"path": "/Users/shri/.dbt"
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5002,
+				"driver": "PostgreSQL",
+				"name": "dw",
+				"group": "sandbox",
+				"database": "marirhs_dw",
+				"username": "dw_root",
+				"password": "dw_root"
+			}
+		]
+	}
+}
