@@ -5,6 +5,10 @@
 		},
 		{
 			"path": "/Users/shri/.dbt"
+		},
+		{
+			"name": "data-engineering-with-dbt",
+			"path": "../../data-engineering-with-dbt"
 		}
 	],
 	"settings": {
