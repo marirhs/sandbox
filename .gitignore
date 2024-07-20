@@ -2,3 +2,12 @@
 sql/id_cache.db-wal
 sql/id_cache.db-shm
 sql/id_cache.db
+dbt/dbt_demo/README.md
+dbt/logs/dbt.log
+logs/dbt.log
+dbt/dbt_demo/analyses/.gitkeep
+dbt/dbt_demo/macros/.gitkeep
+dbt/dbt_demo/seeds/.gitkeep
+dbt/dbt_demo/snapshots/.gitkeep
+dbt/dbt_demo/tests/.gitkeep
+dbt/dbt_demo/.gitignore
