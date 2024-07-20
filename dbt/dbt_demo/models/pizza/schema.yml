@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: dim_runners
+    description: 'Sample Pizza delivery data'
+    database: marirhs_dw  
+    schema: staging  
+    tables:
+      - name: runners
+        description: 'List of Pizza delivery guys'
