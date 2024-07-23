@@ -19,11 +19,34 @@
 				"port": 5002,
 				"driver": "PostgreSQL",
 				"name": "dw",
-				"group": "sandbox",
+				"group": "postgres",
 				"database": "marirhs_dw",
 				"username": "dw_root",
 				"password": "dw_root"
+			},
+			{
+				"previewLimit": 50,
+				"driver": "DuckDB",
+				"database": "${workspaceFolder:data-engineering-with-dbt}/data/nyc_parking_violations.db",
+				"name": "nyc_parking_violations",
+				"group": "dbt"
 			}
-		]
+		],
+		"sqltools.useNodeRuntime": true,
+		"sqltools.autoConnectTo": "",
+		"pgsql.connections": [
+			{
+				"server": "{{put-server-name-here}}",
+				"database": "{{put-database-name-here}}",
+				"user": "{{put-username-here}}",
+				"password": "{{put-password-here}}"
+			}
+		],
+		"pgsql.format.datatypeCasing": "lowercase",
+		"pgsql.format.keywordCasing": "lowercase",
+		"pgsql.format.placeCommasBeforeNextStatement": true,
+		"pgsql.format.placeSelectStatementReferencesOnNewLine": true,
+		"pgsql.intelliSense.lowerCaseSuggestions": true,
+		"workbench.editor.enablePreview": false
 	}
 }
