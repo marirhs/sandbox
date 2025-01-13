@@ -31,18 +31,18 @@ values(1, 2, '2019-01-01 09:00:00.000'),
 				 ,recipient_id
 				 ,date_called
 				 ,FIRST_VALUE(recipient_id) over ( partition by caller_id, date_called::date order by date_called
-																																			   ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
-																																				) as first_person
+													ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+												  ) as first_person
 					,last_value(recipient_id) over ( partition by caller_id, date_called::date order by date_called
-							                                                     ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
-							                                                     ) as last_person
+							                         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+							                        ) as last_person
 			 from 
 			 dim_phonelog
 			 order by caller_id, date_called
 			 )
 			 select 
 			   distinct
-					caller_id
+				 caller_id
 				 ,first_person
 				 ,last_person
 				 ,date_called::date 

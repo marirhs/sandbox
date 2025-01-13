@@ -28,7 +28,7 @@
 			,product_id 
 			,purchase_date
 			,dense_rank() over (partition by user_id, product_id order by purchase_date) as purchase_rnk
-		from dim_purchase_history
+		from staging.dim_purchase_history
 			order by 1,2,3
 			)
 			select 
