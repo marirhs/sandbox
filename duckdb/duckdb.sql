@@ -29,6 +29,7 @@ where
     and table_name='ccone_transactions'
 ;
 
+
 summarize ccone_transactions;
 
 
